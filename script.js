@@ -20,8 +20,8 @@ document.getElementById("suggestion_link_id").onclick = function() {
 		else {
 			console.log(deviceID);
 			console.log(suggestion);
-		};
-	}; 
+		}
+	}
 };
 
 
