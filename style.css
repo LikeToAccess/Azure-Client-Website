@@ -1,0 +1,113 @@
+html {
+	overflow: scroll;
+  	overflow-x: hidden;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+	background-color: rgb(229, 234, 255);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: -0.2px;
+	word-spacing: -0.8px;
+	color: #0027BC;
+	font-weight: normal;
+	text-decoration: none;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+}
+h1 {
+	font-size: 25px;
+}
+
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	letter-spacing: -0.4px;
+	word-spacing: -1.2px;
+	color: #001A7F;
+	font-weight: normal;
+	text-decoration: none;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+}
+
+a {
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	position: sticky;
+	left: 10px;
+	top: 20px;
+	color: #000;
+}
+a:link, a:visited {
+	text-decoration: none!important;
+}
+
+.nav-black, .nav-hover-black:hover {
+	color: #ffffff!important;
+	background-color: #000!important;
+}
+.nav-white, .nav-hover-white:hover {
+	color: #000!important;
+	background-color: #ffffff!important;
+}
+.nav-bar {
+	width: 100%;
+	overflow: hidden;
+	background-color: #000;
+}
+.nav-bar .nav-bar-item {
+	padding: 8px 16px;
+	float: left;
+	background-color: inherit;
+	color: inherit;
+	width: auto;
+	border: none;
+	outline: none;
+	display: block;
+	font-size: 0.9em;
+}
+.nav-button {color: #000000;
+	background-color: #f1f1f1;
+	padding: 8px 16px;
+}
+.nav-button:hover {
+	color: #000000!important;
+	background-color: #cccccc!important;
+}
+
+.right {
+	float: right!important;
+}
+.fixed {
+	position: fixed;
+}
+.pad-bot {
+	padding-bottom: 50px;
+}
+.pad-top {
+	padding-top: 50px;
+}
+.pad-left {
+	padding-left: 50px;
+}
+.pad-right {
+	padding-right: 50px;
+}
+.top {
+	z-index: 99!important;
+}
+.bottom {
+	z-index: -99!important;
+}
+.center {
+	align-content: center;
+	align-items: center;
+}
