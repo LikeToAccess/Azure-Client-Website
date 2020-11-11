@@ -1,2 +1,6 @@
 # Azure-Client-Website
-Definitely nothing like glacier client site am I right?
+**Instead of this:**
+`website>contact.html` **and** `href="/contact.html"`
+**use this:**
+`website>contact>index.html` **and** `href="/contact"`
+*-ucyt5040*
