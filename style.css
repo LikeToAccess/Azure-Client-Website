@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=JetBrains+Mono:wght@300&family=Raleway&display=swap');
 html {
 	overflow: scroll;
   	overflow-x: hidden;
@@ -7,14 +8,20 @@ html::-webkit-scrollbar {
 }
 
 body {
-	background-color: rgb(229, 234, 255);
+	background-color: rgb(48, 50, 59);
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+}
+
+div.content {
+    padding: 10px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Comfortaa', cursive;
 	letter-spacing: -0.2px;
 	word-spacing: -0.8px;
-	color: #0027BC;
+	color: rgb(255, 255, 255);
 	font-weight: normal;
 	text-decoration: none;
 	font-style: normal;
@@ -26,11 +33,11 @@ h1 {
 }
 
 p {
-	font-family: Arial, Helvetica, sans-serif;
+	
 	font-size: 16px;
 	letter-spacing: -0.4px;
 	word-spacing: -1.2px;
-	color: #001A7F;
+	color: rgb(241, 241, 241);
 	font-weight: normal;
 	text-decoration: none;
 	font-style: normal;
@@ -44,7 +51,7 @@ a {
 	position: sticky;
 	left: 10px;
 	top: 20px;
-	color: #000;
+	color: rgb(216, 76, 76);
 }
 a:link, a:visited {
 	text-decoration: none!important;
@@ -110,4 +117,17 @@ a:link, a:visited {
 .center {
 	align-content: center;
 	align-items: center;
+}
+.activeNav {
+    background-color: rgb(100, 100, 100);
+    padding: 8px 16px;
+	float: left;
+	color: inherit;
+	width: auto;
+	border: none;
+	outline: none;
+	display: block;
+	font-size: 0.9em;
+    width: 100%;
+	overflow: hidden;
 }
