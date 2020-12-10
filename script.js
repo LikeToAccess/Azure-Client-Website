@@ -1,5 +1,5 @@
 document.getElementById("download_link_id").onclick = function() {
-	//alert('The client has not been released yet.');
+	alert('The client has not been released yet.');
 	
 	//download_url = "https://www.dropbox.com/s/ixyo2l5bodc5bwg/placeholder.txt?dl=0";
 	download_url = "https://en.wikipedia.org/wiki/Cheese";
@@ -7,6 +7,7 @@ document.getElementById("download_link_id").onclick = function() {
 		download_url, "Azure Client Download", "height=400, width=600, modal=yes, alwaysRaised=yes"
 	);
 };
+/*
 document.getElementById("suggestion_link_id").onclick = function() {
 	var suggestion = window.prompt("What would you like to suggest?");
 	if (suggestion != '') {
@@ -24,7 +25,7 @@ document.getElementById("suggestion_link_id").onclick = function() {
 		}
 	}
 };
-
+*/
 
 
 
