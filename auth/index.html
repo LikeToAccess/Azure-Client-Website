@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=no">
+		<title>Azure Client</title>
+                <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+<!--instert cdn sdks: https://firebase.google.com/docs/web/setup#available-libraries-->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyD9Q_FltYTgnDaZFOLRzSWTzXTiYhB2Jws",
+    authDomain: "azureweb-2d7b4.firebaseapp.com",
+    projectId: "azureweb-2d7b4",
+    storageBucket: "azureweb-2d7b4.appspot.com",
+    messagingSenderId: "858488723725",
+    appId: "1:858488723725:web:8d96277a049efbb99e3844",
+    measurementId: "G-FJNJ5DEQZK"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+		<link href="/style.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.css" />
+ <script src="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: '<url-to-redirect-to-on-success>',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+          firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+          firebase.auth.GithubAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID,
+          firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+          firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+        ],
+        // tosUrl and privacyPolicyUrl accept either url string or a callback
+        // function.
+        // Terms of service url/callback.
+        tosUrl: '<your-tos-url>',
+        // Privacy policy url/callback.
+        privacyPolicyUrl: function() {
+          window.location.assign('<your-privacy-policy-url>');
+        }
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+	</head>
+	<body>
+
+		<!-- NAVIGATION BAR -->
+		<nav class="nav-bar nav-black fixed top">
+			<a href="/download" class="nav-button nav-bar-item">
+				<span id="nav_download_id">Download</span>
+			</a>
+			<a href="/discord-invite" class="nav-button nav-bar-item">
+				<span id="nav_discord_id">Discord</span>
+			</a>
+			<a href="/smp" class="nav-button nav-bar-item">
+				<span id="nav_premium_id">SMP</span>
+			</a>
+			<a href="/unknown.html" class="nav-button nav-bar-item">
+				<span id="nav_premium_id">Premium</span>
+			</a>
+			<a href="/contact" class="nav-button nav-bar-item">
+				<span id="nav_contact_id">Contact</span>
+			</a>
+			<a href="/progress" class="nav-button nav-bar-item">
+				<span id="nav_progress_id">Progress</span>
+			</a>
+			<a class="right nav-button nav-bar-item active">
+				<span id="nav_home_id">Home</span>
+			</a>
+		</nav>
+        <div class="content">
+		<div class="pad-bot"></div>
+		<img id="logo" src="azure-logo.gif" height="45" width="45">
+
+		<!-- MAIN CONTENT -->
+		<div>
+			<h1>Azure Client - Sign Up or Log In</h1>
+			<div id="firebaseui-auth-container"></div>
+
+
+		<!-- SCRIPTING -->
+		<script src="script.js"></script>
+
+		<!-- DISCORD LINK THINGY -->
+		<center>
+			<a href="discord-invite.html">
+				<img class="pad-top" id="logo_wide" src="logo-wide.png">
+			</a>
+		</center>
+        </div>
+	</body>
+	<!-- SPACING FOR MOBILE USERS (there is prb a better way but this works) -->
+	<iframe width="640" height="1" frameborder="0" marginheight="0" marginwidth="0">…</iframe>
+</html>
