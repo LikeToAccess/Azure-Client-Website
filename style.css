@@ -11,6 +11,7 @@ body {
 	background-color: rgb(48, 50, 59);
     font-family: 'Raleway', sans-serif;
     margin: 0;
+    color: white;
 }
 
 div.content {
@@ -31,6 +32,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	font-size: 25px;
 }
+.center {
+    text-align: center;
+}
 
 p {
 	
@@ -44,7 +48,18 @@ p {
 	font-variant: normal;
 	text-transform: none;
 }
-
+h1 a {
+    	font-family: 'Comfortaa', cursive;
+	letter-spacing: -0.2px;
+    font-size: 25px;
+	word-spacing: -0.8px;
+	color: rgb(216, 76, 76);
+	font-weight: normal;
+	text-decoration: none;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+}
 a {
 	font-size: 14px;
 	font-family: Arial, Helvetica, sans-serif;

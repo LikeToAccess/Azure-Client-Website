@@ -9,6 +9,7 @@
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
      <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
 
@@ -26,6 +27,7 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
   firebase.analytics();
 </script>
     <script type="text/javascript">
@@ -41,9 +43,8 @@
             var phoneNumber = user.phoneNumber;
             var providerData = user.providerData;
             user.getIdToken().then(function(accessToken) {
-              document.getElementById('sign-in-status').textContent = 'Signed in';
-              document.getElementById('sign-in').textContent = 'Sign out';
-              document.getElementById('account-details').textContent = JSON.stringify({
+            //only runs if user is signed in
+              info = {
                 displayName: displayName,
                 email: email,
                 emailVerified: emailVerified,
@@ -52,13 +53,13 @@
                 uid: uid,
                 accessToken: accessToken,
                 providerData: providerData
-              }, null, '  ');
+              }
+              
+          }
             });
           } else {
             // User is signed out.
-            document.getElementById('sign-in-status').textContent = 'Signed out';
-            document.getElementById('sign-in').textContent = 'Sign in';
-            document.getElementById('account-details').textContent = 'null';
+            document.getElementById('body').innerHTML = '<h1 class="center">Please <a href="/auth/?redirect=%2Fforums">sign in</a>.</h1>';
           }
         }, function(error) {
           console.log(error);
@@ -69,12 +70,14 @@
         initApp()
       });
     </script>
+    <link href="/style.css" rel="stylesheet" type="text/css">
   </head>
-  <body>
-    <h1>Welcome to My Awesome App</h1>
-    <a href="/auth?redirect=https%3A%2F%2Fazure-client-website.azuredevgroup.repl.co%2Fforums%2F">Sign In</a>
-    <div id="sign-in-status"></div>
-    <div id="sign-in"></div>
-    <pre id="account-details"></pre>
+  <body id="body">
+      <script>
+          document.getElementById('username').innerHTML = displayName;
+          </script>
+    <h1 class="center">Forums</h1><div class="right"><img src="/logo.png" id="pfp"><p id="username">Loading...</p></div>
+	<!-- SCRIPTING -->
+	<script src="/script.js"></script>
   </body>
 </html>
