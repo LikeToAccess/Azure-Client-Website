@@ -40,9 +40,11 @@
     });
     return vars;
 }
+
       // FirebaseUI config.
+
       var uiConfig = {
-        signInSuccessUrl: getUrlVars()["redirect"],
+        signInSuccessUrl: "/",
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
