@@ -1,49 +1,88 @@
+<!--https%3A%2F%2Fazureclient.ga%2Fauth%3Fredirect%3Dhttps%3A%2F%2Fazureclient.ga%2Fforums-->
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=no">
-		<title>Azure Client</title>
-		<link href="/style.css" rel="stylesheet" type="text/css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	</head>
-	<body>
-		<!-- NAVIGATION BAR -->
-		<nav class="nav-bar nav-black fixed top">
-			<a href="/download" class="nav-button nav-bar-item">
-				<span id="nav_download_id">Download</span>
-			</a>
-			<a href="/discord-invite" class="nav-button nav-bar-item">
-				<span id="nav_discord_id">Discord</span>
-			</a>
-			<a href="/smp" class="nav-button nav-bar-item">
-				<span id="nav_premium_id">SMP</span>
-			</a>
-			<a href="/unknown.html" class="nav-button nav-bar-item">
-				<span id="nav_premium_id">Premium</span>
-			</a>
-			<a href="/contact" class="nav-button nav-bar-item">
-				<span id="nav_contact_id">Contact</span>
-			</a>
-			<a href="/progress" class="nav-button nav-bar-item">
-				<span id="nav_progress_id">Progress</span>
-			</a>
-			<a href="/index.html" class="right nav-button nav-bar-item">
-				<span id="nav_home_id">Home</span>
-			</a>
-		</nav>
+  <head>
+    <meta charset="UTF-8">
+    <title>Forums - Azure Client</title>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
 
-		<!-- MAIN CONTENT -->
-		<div class="pad-top">
-			<a href="#" class="download_link">
-				<span id="download_link_id">Download Now</span>
-			</a>
-		</div>
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyD9Q_FltYTgnDaZFOLRzSWTzXTiYhB2Jws",
+    authDomain: "azureweb-2d7b4.firebaseapp.com",
+    projectId: "azureweb-2d7b4",
+    storageBucket: "azureweb-2d7b4.appspot.com",
+    messagingSenderId: "858488723725",
+    appId: "1:858488723725:web:8d96277a049efbb99e3844",
+    measurementId: "G-FJNJ5DEQZK"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+  firebase.analytics();
+</script>
+    <script type="text/javascript">
+      initApp = function() {
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+              
+            // User is signed in.
+            var displayName = user.displayName;
+            var email = user.email;
+            var emailVerified = user.emailVerified;
+            var photoURL = user.photoURL;
+            var uid = user.uid;
+            var phoneNumber = user.phoneNumber;
+            var providerData = user.providerData;
+            user.getIdToken().then(function(accessToken) {
+            //only runs if user is signed in
+              info = {
+                displayName: displayName,
+                email: email,
+                emailVerified: emailVerified,
+                phoneNumber: phoneNumber,
+                photoURL: photoURL,
+                uid: uid,
+                accessToken: accessToken,
+                providerData: providerData
+              }
+              alert(uid)
+          if uid in ["L0JziCdECOQ8bDpxcFPd21apEWs2", "test2"] {
+              document.getElementById("body") = "<h1 class=\"center\">Download For Beta</h1>\n<p class=\"center\"><a>Download Now</a></p>"
+          }
+              document.getElementById('pfp').getAttribute("src") = user.photoURL;
+          }
+            });
+          } else {
+            // User is signed out.
+            document.getElementById('body').innerHTML = '<h1 class="center">Please <a href="/auth/?redirect=%2Fforums">sign in</a>.</h1>';
+          }
+        }, function(error) {
+          console.log(error);
+        });
+      };
 
-		<!-- SCRIPTING -->
-		<script src="/script.js"></script>
-	</body>
-	<!-- SPACING FOR MOBILE USERS -->
-	<iframe width="640" height="1" frameborder="0" marginheight="0" marginwidth="0">…</iframe>
+      window.addEventListener('load', function() {
+        initApp()
+      });
+    </script>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body id="body">
+      <script>
+          
+          </script>
+    <h1 class="center">You don't have beta access.</h1>
+	<!-- SCRIPTING -->
+	<script src="/script.js"></script>
+  </body>
 </html>
